@@ -21,9 +21,9 @@ string	get_bit_hex_alphabet(char ch)
 
 string	get_bits_to_hexa_bits(string bits)
 {
-	string			hexa_bits;
+	string				hexa_bits;
 	stringstream	ss;
-	bitset<4>		temp_bits;
+	bitset<4>			temp_bits;
 
 	for (int i=0; i<bits.length(); i+=4)
 	{
@@ -38,8 +38,8 @@ string	get_bits_to_hexa_bits(string bits)
 string	get_entire_bit_key(string key)
 {
 	const char	*c_key = key.c_str();
-	bitset<4>	bit4;
-	string		ret;
+	bitset<4>		bit4;
+	string			ret;
 
 	ret = "";
 	for (int i=0; i<key.length(); i++)
@@ -56,7 +56,7 @@ string	get_entire_bit_key(string key)
 
 string	get_key56_by_permutation_table(string key64)
 {
-	int		index;
+	int			index;
 	string	key56;
 
 	for (int i=0; i<parityBitDropTable.size(); i++)
@@ -69,7 +69,7 @@ string	get_key56_by_permutation_table(string key64)
 
 string	get_key48_by_permutation_table(string key56)
 {
-	int		index;
+	int			index;
 	string	key48;
 
 	for (int i=0; i<keyCompressionTable.size(); i++)

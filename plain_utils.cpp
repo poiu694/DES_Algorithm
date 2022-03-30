@@ -21,7 +21,7 @@ void	set_left_right_key(string key, string &left_key, string &right_key)
 
 string	expansion_right_key(string key)
 {
-	int		index;
+	int			index;
 	string	ret;
 
 	for (int i=0; i<expansionPermutationTable.size(); i++)
@@ -34,8 +34,8 @@ string	expansion_right_key(string key)
 
 int	get_sbox_value(string token, int index)
 {
-	int		row;
-	int		col;
+	int			row;
+	int			col;
 	string	tk1;
 	string	tk2;
 
@@ -91,7 +91,7 @@ string	get_sbox_key(string key)
 
 string	get_sbox_permutation(string key)
 {
-	int		index;
+	int			index;
 	string	ret;
 
 	for (int i=0; i<straightPermutationTable.size(); i++)
@@ -104,7 +104,7 @@ string	get_sbox_permutation(string key)
 
 string	inverse_ip(string key)
 {
-	int		index;
+	int			index;
 	string	ret;
 
 	for (int i=0; i<finalPermutationTable.size(); i++)
