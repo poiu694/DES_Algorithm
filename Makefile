@@ -2,12 +2,12 @@ NAME		= des
 
 INCS		= des.h
 
-SRCS		= main.c \
-			  des_algorithm.c \
-			  key_generation.c \
-			  plain_algorihtm.c
+SRCS		= main.cpp \
+			  des_algorithm.cpp \
+			  key_generation.cpp \
+			  plain_algorithm.cpp
 
-OBJS		= $(SRCS:.c=.o)
+OBJS		= $(SRCS:.cpp=.o)
 
 CC			= g++
 CFLAGS		= -std=c++17
