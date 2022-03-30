@@ -10,11 +10,11 @@ string	xor_bit48(string key1, string key2)
 	return (output.to_string());
 }
 
-string	xor_bit36(string key1, string key2)
+string	xor_bit32(string key1, string key2)
 {
-	bitset<36>	output;
-	bitset<36>	bits1(key1);
-	bitset<36>	bits2(key2);
+	bitset<32>	output;
+	bitset<32>	bits1(key1);
+	bitset<32>	bits2(key2);
 
 	output = bits1 ^ bits2;
 	return (output.to_string());

@@ -29,11 +29,13 @@ string	ip_plaintext(string plaintext);
 void	set_left_right_key(string key, string &left_key, string &right_key);
 string	expansion_right_key(string key);
 
-string	xor_bit36(string key1, string key2);
+string	xor_bit32(string key1, string key2);
 string	xor_bit48(string key1, string key2);
 string	get_sbox_key(string key);
 int	get_int_bit2(string bit);
 int	get_int_bit4(string bit);
 string	get_int_to_bits(int num);
+string	get_sbox_permutation(string key);
+string	inverse_ip(string key);
 
 #endif

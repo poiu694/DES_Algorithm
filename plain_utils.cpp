@@ -39,10 +39,12 @@ int	get_sbox_value(string token, int index)
 	string	tk1;
 	string	tk2;
 
-	cout << "Token\n" << token << '\n';;
-	tk1 = token[0] + token[5];
-	tk2 = token[1] + token[2] + token[3] + token[4];
-	cout << tk1 << " " << tk2 << '\n';
+	tk1 += token[0];
+	tk1 += token[5];
+	tk2 += token[1];
+	tk2 += token[2];
+	tk2 += token[3];
+	tk2 += token[4];
 	row = get_int_bit2(tk1);
 	col = get_int_bit4(tk2);
 	if (index == 1)
@@ -76,7 +78,6 @@ string	get_sbox_key(string key)
 	string	key8 = key.substr(42, 6);
 	string	ret;
 
-	cout << key8 << '\n';
 	ret = get_int_to_bits(get_sbox_value(key1, 1));
 	ret += get_int_to_bits(get_sbox_value(key2, 2));
 	ret += get_int_to_bits(get_sbox_value(key3, 3));
@@ -85,5 +86,31 @@ string	get_sbox_key(string key)
 	ret += get_int_to_bits(get_sbox_value(key6, 6));
 	ret += get_int_to_bits(get_sbox_value(key7, 7));
 	ret += get_int_to_bits(get_sbox_value(key8, 8));
+	return (ret);
+}
+
+string	get_sbox_permutation(string key)
+{
+	int		index;
+	string	ret;
+
+	for (int i=0; i<straightPermutationTable.size(); i++)
+	{
+		index = straightPermutationTable[i];
+		ret += key[index - 1];
+	}
+	return (ret);
+}
+
+string	inverse_ip(string key)
+{
+	int		index;
+	string	ret;
+
+	for (int i=0; i<finalPermutationTable.size(); i++)
+	{
+		index = finalPermutationTable[i];
+		ret += key[index - 1];
+	}
 	return (ret);
 }
