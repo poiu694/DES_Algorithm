@@ -5,7 +5,8 @@ INCS		= des.h
 SRCS		= main.cpp \
 			  des_algorithm.cpp \
 			  key_generation.cpp \
-			  plain_algorithm.cpp
+			  plain_utils.cpp \
+			  str_utils.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 

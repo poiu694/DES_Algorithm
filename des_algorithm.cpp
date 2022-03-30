@@ -1,30 +1,27 @@
 #include "des.h"
 
-void	print_origin(string plaintext, string key)
-{
-	printf("---------------------------------------------\n");
-	printf("plaint text : %s\n", plaintext.c_str());
-	printf("origin key : %s\n", key.c_str());
-	printf("---------------------------------------------\n");
-}
-
 string des_algorhtim(string plaintext, string key)
 {
+	string	plain_left_key;
+	string	plain_right_key;
+	string	expansion_key;
+	string	xor_key;
+	string	plain64;
 	string	left_key;
 	string	right_key;
 	string	des_key;
+	string	sbox_key;
 
-	print_origin(plaintext, key);
+	plain64 = get_entire_bit_key(plaintext);
+	set_left_right_key(plain64, plain_left_key, plain_right_key);
+	expansion_key = expansion_right_key(plain_right_key);
 	des_key = generate_init_key(key, left_key, right_key);
-	printf("====================%d======================\n", 1);
-	printf("key : %10s\n",des_key.c_str());
-	printf("============================================\n");
+	xor_key = xor_bit48(expansion_key, get_entire_bit_key(des_key));
+	sbox_key = get_sbox_key(xor_key);
+	cout << sbox_key << '\n';
 	for (int i=2; i<=16; i++)
 	{
-		printf("====================%d======================\n", i);
 		des_key = generate_key(left_key, right_key, i);	
-		printf("key : %10s\n",des_key.c_str());
-		printf("============================================\n");
 	}
 	return (des_key);
 }

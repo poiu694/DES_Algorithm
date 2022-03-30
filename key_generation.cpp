@@ -41,6 +41,7 @@ string	get_entire_bit_key(string key)
 	bitset<4>	bit4;
 	string		ret;
 
+	ret = "";
 	for (int i=0; i<key.length(); i++)
 	{
 		bit4 = bitset<4>(c_key[i]);
