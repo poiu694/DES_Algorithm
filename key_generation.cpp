@@ -2,39 +2,6 @@
 
 using namespace std;
 
-string	get_bit_hex_alphabet(char ch)
-{
-	if (ch == 'A')
-		return ("1010");
-	if (ch == 'B')
-		return ("1011");
-	if (ch == 'C')
-		return ("1100");
-	if (ch == 'D')
-		return ("1101");
-	if (ch == 'E')
-		return ("1110");
-	if (ch == 'F')
-		return ("1111");
-	return (NULL);
-}
-
-string	get_bits_to_hexa_bits(string bits)
-{
-	string				hexa_bits;
-	stringstream	ss;
-	bitset<4>			temp_bits;
-
-	for (int i=0; i<bits.length(); i+=4)
-	{
-		temp_bits = bitset<4>(bits.substr(i, 4));
-		ss << hex << uppercase << temp_bits.to_ulong();
-		hexa_bits += ss.str();
-		ss.str("");
-	}
-	return (hexa_bits);
-}
-
 string	get_entire_bit_key(string key)
 {
 	const char	*c_key = key.c_str();
